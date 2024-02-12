@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.post-division{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}.post-division-line{
+    width: 75%;
+
+    border: solid 1px #202020;
+}

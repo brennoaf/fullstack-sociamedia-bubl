@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: white;
+}
+
+.left-nav-content{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 20rem;
+    justify-content:end;
+    overflow: hidden;
+
+}
+
+.circle-content-top{
+    position: fixed;
+    width: 15rem;
+    height: 15rem;
+    top:0;
+    left: 0;
+
+    border-top-width: 0;
+    border: solid #565656 1.8px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 100%;
+    
+}
+
+.circle-content-bottom{
+    position: fixed;
+    bottom: 0;
+    width: 20em;
+    height: 25em;
+    z-index: 99;
+
+    background-color: #161616;
+    border: solid #565656 1.8px;
+    border-top-right-radius: 100%;
+}.nav-items{
+    display: flex;
+    width:100%;
+    height: 100%;
+    padding: 0 0 .5em .5em;
+
+    align-items: end;
+}.nav-tools{
+    position: absolute;
+    width:100%;
+    height: 100%;
+}.config-content{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 2em;
+    left: 2.5em;
+    }.config-icon{
+        width: 100%;
+        height: 100%;
+        filter: invert();
+    }
+
+.nav-user-content{
+    display: flex;
+    flex-direction: column;
+    }.user-pfpic-content{
+        width: 150px;
+        height: 150px;
+
+        }.user-pfpic{
+            width: 100%;
+            height: 100%;
+
+            filter:invert();
+            border-radius: 100%;
+        }
+    .user-username-content{
+        width: min-content;
+        margin-top: .5em;
+        padding: .2em .5em .2em .5em;
+        
+        background-color: #333333;
+        border-radius: 8px;
+        }.user-username{
+            font-size: 15px;
+        }
+    .user-status-items{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 1em;
+        }.user-status-content{
+            width: 15em;
+            padding: .5em;
+
+            background-color: #333333;
+            border-radius: 12px;
+            }.user-text-status{
+                font-size: 15px;
+
+            }
+        .user-emoji-content{
+            height: 100%;
+            margin-left: 1em;
+
+            }.user-emoji-status{
+                font-size: 30px;
+            }
