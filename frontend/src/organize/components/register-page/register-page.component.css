@@ -75,3 +75,38 @@ main{
     border-radius: 100%;
 
 }
+.first-step-button{
+    padding: .8em 4em .8em 4em;
+    font-size: 15px;
+
+    background: #313131;
+    border-radius: 12px;
+    border: solid rgb(63, 63, 63) 1px;
+    cursor: pointer;
+}
+
+.email-step-button{
+    margin-top: 2em;
+    padding: .8em 4em .8em 4em;
+    font-size: 15px;
+
+    background: #313131;
+    border-radius: 12px;
+    border: solid rgb(63, 63, 63) 1px;
+    cursor: pointer;
+}
+
+.go-back-button{
+    position: relative;
+    top: 2em;
+    left: 5em;
+
+    cursor: pointer;
+}
+
+
+.input-status{
+    margin: -.8em 0 1em 0;
+    font-size: 15px;
+    color: rgb(214, 0, 0);
+}

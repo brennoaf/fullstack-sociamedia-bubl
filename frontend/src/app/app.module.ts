@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+
 import { GlobalFeedComponent } from '../organize/components/global-feed/global-feed.component';
 import { MainFeedComponent } from '../organize/components/global-feed/main-feed/main-feed.component';
 import { LeftNavBarComponent } from '../organize/components/global-feed/left-nav-bar/left-nav-bar.component';
@@ -12,6 +13,7 @@ import { LoginPageComponent } from '../organize/components/login-page/login-page
 import { RegisterPageComponent } from '../organize/components/register-page/register-page.component';
 import { RegisterFirstStepComponent } from '../organize/components/register-page/register-first-step/register-first-step.component';
 import { RegisterNextStepEmailComponent } from '../organize/components/register-page/register-next-step-email/register-next-step-email.component';
+import { ShareDataService } from './app.services';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,14 @@ import { RegisterNextStepEmailComponent } from '../organize/components/register-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    ShareDataService
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

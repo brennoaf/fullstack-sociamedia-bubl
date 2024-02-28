@@ -1,54 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const userRegister = require('../models/User.js')
+const userModel = require('../models/User.js');
+const userController = require('../controllers/userController.js');
 const app = express();
 app.use(express.json())
 
 //importing routes
+const userAuth = new userController.UserAuthentication();
 
-router.post('/register', async(req, res) =>{
-
-    const {
-        name,
-        username, 
-        email, 
-        password, 
-        confirmpassword
-    } = req.body
-
-    //validations
-    if(!name){
-        return res.status(422).json({ msg: 'Insira um nome!'})
-    }
-
-    if(!username) {
-        return res.status(422).json({ msg: 'Insira um nome de usuário!' })
-    }
-
-    if(!email){
-        return res.status(422).json({ msg: 'Insira um endereço de email!' })
-    }
-
-    if(!password){
-        return res.status(422).json({ msg: 'Insira uma senha!' });
-    }
-
-    if(!confirmpassword){
-        return res.status(422).json({ msg: 'Insira a confirmação da senha!' });
-    }
-
-    if(password != confirmpassword){
-        return res.status(422).json({ msg: 'As senhas não são iguais!' });
-    }
-
-    
-
-    //Verify and deny multiple credentials
+//public routes
+router.post('/register', async (req, res) => {
     try{
-        await userRegister.registerUser(name, username, email, password, confirmpassword, res);
+        await userAuth.userRegister(req, res);
+    }catch(err){
+        console.log('erro: ' + err);
+        res.status(500).json({ msg: `Erro no servidor!`});
     }
-    catch(err){
+    
+})
+
+router.post('/login', async (req, res) => {
+    try{
+        await userAuth.userLogin(req, res);
+
+    }catch(err){
         console.log('erro:' + err);
+        return res.status(500).json({ msg: 'Erro no servidor!' });
     }
 
 })

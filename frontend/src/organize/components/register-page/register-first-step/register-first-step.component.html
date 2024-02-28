@@ -5,21 +5,19 @@
     <div class="register-inputs">
         <label class="input-organizer">
             Enter username
-            <input class="register-insert insert-username" maxlength="20">
+            <input class="register-insert insert-username" maxlength="20" (input)="sendTempUsername()" [(ngModel)]="tempRegUsername"/>
             <p class="inside-input">&#64;</p>
         </label>
         <label class="input-organizer">
             Enter password
-            <input class="register-insert insert-pass" type="password" maxlength="100">
+            <input class="register-insert insert-pass" type="password" maxlength="100" (input)="sendPassword()" [(ngModel)]="passwordContent">
             <p class="inside-input">#</p>
         </label>
         <label class="input-organizer">
             Confirm password
-            <input class="register-insert insert-confirmpass" type="password" maxlength="100">
+            <input class="register-insert insert-confirmpass" type="password" maxlength="100" (input)="sendPasswordConf()" [(ngModel)]="confPasswordContent">
             <p class="inside-input">#</p>
         </label>
-    </div>
-    <div class="register-button-content">
-        <button class="register-button">Create account</button>
+        <p class="input-status">{{ messageError }}</p>
     </div>
 </div>

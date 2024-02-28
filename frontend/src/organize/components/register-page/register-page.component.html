@@ -9,7 +9,19 @@
     <div class="register-content">
         <div class="circle-register">
             <div class="register-container">
-                <app-register-first-step></app-register-first-step>
+                <div class="register-first-step" *ngIf="!NextStepEmail">
+                    <app-register-first-step></app-register-first-step>
+                    <p class="input-status">{{ messageError }}</p>
+                    <div class="register-button-content">
+                        <button class="first-step-button" (click)="checkCredentials()">Create account</button>
+                    </div>
+                </div>
+                
+                <div class="register-next-step-email" *ngIf="NextStepEmail">
+                    <p class="go-back-button" (click)="goNextStepEmail()">Go back</p>
+                    <app-register-next-step-email></app-register-next-step-email>
+                    <button class="email-step-button">Confirm Email</button>
+                </div>
             </div>
         </div>
     </div>
