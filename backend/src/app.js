@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const connectionDB = require('./config/dbConfig.js');
 
 //JSON Response config as default
@@ -13,7 +11,7 @@ const User = require('./models/User')
 const userRegister = require('./models/User.js')
 
 //Routes
-const authRoutes = require('./routes/authRoutes.js')
+const PUauthRoutes = require('./routes/PUBLICauthRoutes.js')
 
 
 app.get('/', (req, res) =>{
